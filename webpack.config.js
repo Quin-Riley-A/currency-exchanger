@@ -18,7 +18,7 @@ module.exports = {
     new ESLintPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: '[[[[[Project Title]]]]]',
+      title: 'Currency Exchanger',
       template: './src/index.html',
       inject: 'body'
     }),
