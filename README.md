@@ -1,24 +1,23 @@
-# (TITLE)
+# Currency Exchanger
 
 ## Authored by: 
-Quin Asselin, (YEAR)
+Quin Asselin, October 2022
 
 ***
 
 ## Table of Contents
 1. [Repository Description](#description)
-2. [Github Pages Information](#pages)
-3. [Technologies Used](#tech)
-4. [Setup Instructions](#setup)
-5. [Example Tests](#tests)
-6. [Known Bugs](#bugs)
-7. [License Information](#license)
-8. [Photo Licensure](#photo)
+2. [Technologies Used](#tech)
+3. [Setup Instructions](#setup)
+4. [Example Tests](#tests)
+5. [Known Bugs](#bugs)
+6. [License Information](#license)
+7. [Photo Licensure](#photo)
 
 *** 
 
 ### Repository Description: {#description}
-[describe what it does!]
+This project will accept an input from the user including the current
 
 This project was hand-built in tandem with a programming class taught by Epicodus. It contains use of {LANGUAGES} JavaScript, HTML, and formatting from both custom CSS and Bootstrap. 
 
@@ -37,49 +36,76 @@ This project can be accessed on Github Pages via this [link](INSERT LINK HERE)
 - Markdown Text
 - Bootstrap 4.6.2
 - Git
-- Github and Github Pages
-[check spelling and such of these]
+- Github
 - ES Lint
-- Babel (version)
-- 
+- Babel Core 7.18.6
+- Webpack 4.46
+- Webpack CLI 3.3.12
+- HTML Webpack Plugin 4.5.2
+- Clean Webpack Plugin 3.0.0
+- Webpack Dev Server 3.11.3
+- CSS Loader 3.6
+- Jest 24.9
+- Style Loader 1.3
+- [[NAME THE APIs USED]]
 ***
 
 ### Setup Instructions: {#setup}
-process to use this template:
-
-- Installing all packages with $ npm install.
-- Building the project using webpack with $ npm run build
-- Starting a development server with $ npm run start
-- Linting JS files in the src folder with $ npm run lint
-- Running tests with Jest using $ npm run test
-
-
-This webpage can be access by following the Github Pages linked [above](#pages)
-
-Alternatively, the project can be opened via cloning/downloading repository:
-1. Download this repository from its Github Repository.
+This project can be opened via cloning/downloading repository:
+1. Download this repository from its Github Repository located [here.](https://github.com/Quin-Riley-A/galactic-age-calc)
 2. Locate the download destination folder on your local machine.
 3. Unzip the downloaded folder if necessary.
-4. Enter the decompressed folder and open "index.html" in your prefered web browser.
+4. Ensure all files are present from your download folder, namely:
+  - \__tests__ folder:
+    - utility folder:
+      - ageAssign.tests.js
+      - millToDays.tests.js
+    - ages.tests.js
+  - css folder:
+    - bootstrap.css
+    - styles.css
+  - src folder:
+    - classes folder:
+      - ages.js
+    - utility folder:
+      -ageAssign.js
+      - millToDays.js
+    - index.html
+    - index.js
+    - scripts.js
+  - .babelrc
+  - .eslintrc
+  - .gitignore
+  - package-lock.json
+  - package.json
+  - LICENSE
+  - README.md
+  - webpack.config.js
 
-(ADD STEPS ABOUT VERIFYING PROJECT IS SET UP CORRECTLY)
+5. Navigate to your decompressed download destination folder within the terminal and run the following command to install dependencies:
+```bash
+npm install
+```
+
+6. Following this, use the following command to generate a bundled package containing the working html file:
+```bash
+npm run build
+```
+
+7. Next, to set up a development server, within the same directory run the following command in your terminal:
+```bash
+npm run start
+```
+
+8. Alternatively to step 7: After step 6 is successfully completed, navigate to the dist folder within the root directory and open the index.html file in your preferred web browser.
+  * Note that by opening the program directly from the dist/index.html no changes made to the code while the webpage is opened will be registered. To register the effects of changes on the browser steps 6 and 8 will need to be repeated.
+
+[[MENTION HOW TO GET THE API KEY AND ACCOUNT AND WHERE TO PUT IT!!!!]]
+
 ***
 
 ### Tests: {#tests}
-TESTING INFO
-## An example for formatting:
-##### Describe: wordCounter()
-**Test 1:** 
-*"It should return 1 if a passage contains a single word."*
-
-***Code:***
-```javascript
-const text = "hello";
-wordCounter(text);
-```
-***Expected Output:***
-1
-## End Example
+Tests for this project were constructed in Jest using the Red-Green-Refactor workflow. Tests have been designed for 100% line coverage for the project's business logic. Further information about the function and design of each test can be found in the *tests /* folder[here.](/__tests__/).
 ***
 
 ### Known Bugs: {#bugs}
