@@ -7,6 +7,24 @@
   <title>Currency Exchange Calculator</title>
 </head>
 <body>
-  
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="input-currency-amt">Currency Amount (</label>
+        <input class="form-control" id="input-currency-amt" type="number" placeholder="Please input the amount for the chosen currency.">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="input-currency">Currency Type</label>
+        <select class="form-control" id="input-currency-select"></select>
+        <!-- <option id="opt${i}">optList[${i}]</option> --> 
+        <!-- put this above line into a loop to include all the valid currencies in the array as options -->
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="usrCrrncyInput">Submit</button>
+      </div>
+    </div>
+  </form>
 </body>
 </html>
