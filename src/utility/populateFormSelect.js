@@ -180,6 +180,9 @@ export class populateFormSelect {
       optionTag.id =`opt${formArr[i].countryCode}`;
       optionTag.value = `${formArr[i].countryCode}`;
       optionTag.innerHTML = `${formArr[i].currencyName} (${formArr[i].country})`;
+      if (formArr[i].countryCode === 'USD') {
+        optionTag.setAttribute('selected', 'selected');
+      }
       selectTag.appendChild(optionTag);
     }
   }
