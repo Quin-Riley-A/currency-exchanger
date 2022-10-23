@@ -1,5 +1,5 @@
 export class populateFormSelect {
-  static buildFormOptions () {
+  static buildFormArray () {
     let table = "AED,	UAE Dirham,	United Arab Emirates,\
     AFN,	Afghan Afghani,	Afghanistan,\
     ALL,	Albanian Lek,	Albania,\
@@ -169,13 +169,18 @@ export class populateFormSelect {
         currencyName: lines[i+1],
         country: lines[i+2]
       };
-      console.log('in the looop');
       formArr.push(currencyOption);
     }
-    console.log(lines);
-    console.log('lines');
-    console.log('formArr');
-    console.log(formArr);
     return formArr;
+  }
+  static makeFormHTML(formArr) {
+    const selectTag = document.querySelector('select');
+    for (let i = 0; i < formArr.length; i++) {
+      const optionTag = document.createElement('option');
+      optionTag.id =`opt${formArr[i].countryCode}`;
+      optionTag.value = `${formArr[i].countryCode}`;
+      optionTag.innerHTML = `${formArr[i].currencyName} (${formArr[i].country})`;
+      selectTag.appendChild(optionTag);
+    }
   }
 }
