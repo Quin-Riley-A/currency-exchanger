@@ -173,8 +173,8 @@ export class populateFormSelect {
     }
     return formArr;
   }
-  static makeFormHTML(formArr) {
-    const selectTag = document.querySelector('select');
+  static makeFormHTML(formArr, querySelectorTag) {
+    const selectTag = document.querySelector(querySelectorTag);
     for (let i = 0; i < formArr.length; i++) {
       const optionTag = document.createElement('option');
       optionTag.id =`opt${formArr[i].countryCode}`;
