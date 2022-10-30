@@ -25,8 +25,10 @@ function displayConversion(usrAmt, usrInpt, usrOutpt, exchangeRateObj) {
   return exchangeRateObj.response;
 }
 
-function displayError(errorArray) {
-  console.log('Oof, bad Dr. Pepper right there' + errorArray);
+function displayError(errorArr) {
+  console.log(errorArr[1].result, errorArr[0].status, errorArr[0].statusText, errorArr[1]['error-type'], errorArr[1][
+    'extra-info']);
+  console.log(errorArr[1]);
 }
 
 function formPrep() {
