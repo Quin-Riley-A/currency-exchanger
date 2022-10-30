@@ -18,14 +18,14 @@ function requestExchangeAPI(usrAmt, usrInpt, usrOutpt) {
 }
 
 function displayConversion(usrAmt, usrInpt, usrOutpt, exchangeRateObj) {
-  console.log('usrAmt');
-  console.log(usrAmt);
-  console.log('usrInpt');
-  console.log(usrInpt);
-  console.log('usrOutpt');
-  console.log(usrOutpt);
-  console.log(exchangeRateObj['AED']);
-  console.log('Success!');
+  console.log('conversion');
+  console.log((usrAmt/exchangeRateObj[usrInpt]) * exchangeRateObj[usrOutpt])
+  const conversion = (Math.round(((usrAmt/exchangeRateObj[usrInpt]) * exchangeRateObj[usrOutpt]) * 100))/100
+  const outputDiv = document.getElementById('exchange-output');
+  outputDiv.innerHTML = '';
+  const pTag = document.createElement('p');
+  pTag.innerHTML = `The amount totalling: <br>${usrAmt} in ${usrInpt} <br>equates to: <br>${conversion} in ${usrOutpt}`
+  outputDiv.append(pTag);
   return exchangeRateObj.response;
 }
 
