@@ -9,8 +9,6 @@ function requestExchangeAPI(usrAmt, usrInpt, usrOutpt) {
   let promise = exchangeAPI.getExchangeRates();
   promise.then(function(exchangeRateObj) {
     displayConversion(usrAmt, usrInpt, usrOutpt, exchangeRateObj);
-    console.log('exchangeRates in requestExchangeAPI');
-    console.log(exchangeRateObj);
     return exchangeRateObj;
   }, function(errorArr) {
     displayError(errorArr);
@@ -18,13 +16,11 @@ function requestExchangeAPI(usrAmt, usrInpt, usrOutpt) {
 }
 
 function displayConversion(usrAmt, usrInpt, usrOutpt, exchangeRateObj) {
-  console.log('conversion');
-  console.log((usrAmt/exchangeRateObj[usrInpt]) * exchangeRateObj[usrOutpt])
   const conversion = currencyConvert.convert(usrAmt, usrInpt, usrOutpt, exchangeRateObj);
   const outputDiv = document.getElementById('exchange-output');
   outputDiv.innerHTML = '';
   const pTag = document.createElement('p');
-  pTag.innerHTML = `The amount totalling: <br>${usrAmt} in ${usrInpt} <br>equates to: <br>${conversion} in ${usrOutpt}`
+  pTag.innerHTML = `The amount totalling: <br>${usrAmt} in ${usrInpt} <br>equates to: <br>${conversion} in ${usrOutpt}`;
   outputDiv.append(pTag);
   return exchangeRateObj.response;
 }
@@ -53,10 +49,7 @@ function handleFormSubmission(event) {
   const userCurrencyAmt = parseFloat(document.querySelector('input#input-currency-amt').value);
   const userCurrencyInput = document.querySelector('select#input-currency-select').options[document.querySelector('select#input-currency-select').selectedIndex].value;
   const userCurrencyOutput = document.querySelector('select#output-currency-select').options[document.querySelector('select#output-currency-select').selectedIndex].value;
-  let exchangeRates = requestExchangeAPI(userCurrencyAmt, userCurrencyInput, userCurrencyOutput);
-  console.log('exchange rates in handleform submission');
-  console.log(exchangeRates);
-  currencyConvert.convert(userCurrencyInput, userCurrencyOutput, exchangeRates);
+  requestExchangeAPI(userCurrencyAmt, userCurrencyInput, userCurrencyOutput);
 }
 
 window.addEventListener('load', formPrep);
