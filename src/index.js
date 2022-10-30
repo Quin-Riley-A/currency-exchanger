@@ -26,11 +26,12 @@ function displayConversion(usrAmt, usrInpt, usrOutpt, exchangeRateObj) {
 }
 
 function displayError(errorArr) {
-  console.log(errorArr[1].result, errorArr[0].status, errorArr[0].statusText, errorArr[1]['error-type'], errorArr[1]['extra-info']);
-  console.log(errorArr[1]);
   const outputDiv = document.getElementById('exchange-output');
   outputDiv.innerHTML = '';
   const pTag = document.createElement('p.error');
+  if (errorArr[1]['extra-info'] === undefined) {
+    errorArr[1]['extra-info'] = '';
+  }
   pTag.innerHTML = `This request has resulted in: ${errorArr[1].result} <br>Status: ${errorArr[0].status} ${(errorArr[0].statusText).toLowerCase()} <br>Type: ${errorArr[1]['error-type']} ${errorArr[1]['extra-info']}<br> For additional assistance/to give feedback please contact the author of this program version.`;
   outputDiv.append(pTag);
 }
