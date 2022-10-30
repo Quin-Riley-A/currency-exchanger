@@ -2,7 +2,7 @@ import './css/styles.css';
 import './css/bootstrap.css';
 import { exchangeAPI } from './utility/exchangeAPI.js';
 import { populateFormSelect } from './utility/populateFormSelect.js';
-import { currencyConvert } from './js/currencyConvert.js';
+import { currencyConvert } from './utility/currencyConvert.js';
 
 
 function requestExchangeAPI(usrAmt, usrInpt, usrOutpt) {
@@ -20,7 +20,7 @@ function requestExchangeAPI(usrAmt, usrInpt, usrOutpt) {
 function displayConversion(usrAmt, usrInpt, usrOutpt, exchangeRateObj) {
   console.log('conversion');
   console.log((usrAmt/exchangeRateObj[usrInpt]) * exchangeRateObj[usrOutpt])
-  const conversion = (Math.round(((usrAmt/exchangeRateObj[usrInpt]) * exchangeRateObj[usrOutpt]) * 100))/100
+  const conversion = currencyConvert.convert(usrAmt, usrInpt, usrOutpt, exchangeRateObj);
   const outputDiv = document.getElementById('exchange-output');
   outputDiv.innerHTML = '';
   const pTag = document.createElement('p');
