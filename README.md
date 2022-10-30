@@ -57,14 +57,14 @@ This project can be opened via cloning/downloading repository:
     - populateFormSelect.js
   - index.html
   - index.js
-  - .babelrc
-  - .eslintrc
-  - .gitignore
-  - package-lock.json
-  - package.json
-  - LICENSE
-  - README.md
-  - webpack.config.js
+- .babelrc
+- .eslintrc
+- .gitignore
+- package-lock.json
+- package.json
+- LICENSE
+- README.md
+- webpack.config.js
 
 5. To allow this program to properly function, you will need to add your own exchange rate API key which can be done as follows:
   - Navigate to [exchangerate-api.com](https://www.exchangerate-api.com/)
@@ -75,7 +75,7 @@ This project can be opened via cloning/downloading repository:
   - On the dashboard page copy the bold faced API Key. It should look like a random series of letters and numbers
   - Return to the currency-exchanger working environment.
   - Create a file called '.env' in the root directory as a sibling to this 'README.md' (the quotes are not necessary).
-  - Edit the text of that file to read as follows:
+  - Edit the text of that file in a program such as VSCode to read as follows:
   ```code
   API_KEY=[your key from the exchange rate API dashboard]
   ```
